@@ -1,0 +1,38 @@
+// Object categories for the tree filter. Rules are checked top to bottom, the first match wins.
+// In one rule every field that is set must match; inside a field any value may match.
+//   types    - base record signature: STAT MSTT FURN DOOR CONT ACTI TACT LIGH MISC FLOR TREE BOOK ALCH INGR KEYM WEAP ARMO ...
+//   path     - text inside the model path under meshes\ (case-insensitive)
+//   editorId - text inside the base record editor id (case-insensitive)
+//   keywords - keyword editor ids on the base record
+//   marker   - true: only markers
+// The same name may appear in several rules. "overrides" maps a reference form key to a category and wins over rules.
+// View -> Reload categories applies edits without a restart.
+{
+  "categories": [
+    { "name": "Markers",      "color": "#6A6A9A", "marker": true },
+    { "name": "Doors",        "color": "#E06666", "types": ["DOOR"] },
+    { "name": "Lights",       "color": "#FFD966", "types": ["LIGH"] },
+    { "name": "Lights",       "path": ["candle", "lantern", "chandelier", "brazier", "sconce", "lamp"] },
+    { "name": "Containers",   "color": "#F6B26B", "types": ["CONT"] },
+    { "name": "Containers",   "path": ["\\chests\\", "\\chest\\"] },
+    { "name": "Furniture",    "color": "#C8A060", "types": ["FURN"] },
+    { "name": "Furniture",    "path": ["furniture\\"] },
+    { "name": "Food",         "color": "#93C47D", "types": ["ALCH", "INGR"] },
+    { "name": "Books",        "color": "#B4A7D6", "types": ["BOOK", "SCRL"] },
+    { "name": "Books",        "path": ["bookset", "openbook", "\\paper\\", "book", "scroll", "note", "inkwell", "quill"] },
+    { "name": "Dishes",       "color": "#D5A6BD", "editorId": ["Plate", "Bowl", "Goblet", "Tankard", "Pitcher", "Jug", "Cup", "Mug", "Kettle", "Flagon", "Platter", "Silverware", "Cutlery", "Clutterly", "Fork", "Knife", "Spoon"] },
+    { "name": "Dishes",       "path": ["\\dishes\\", "plate", "bowl", "goblet", "tankard", "pitcher", "jug", "\\cup", "mug", "kettle", "flagon", "platter", "cutlery", "bottle"] },
+    { "name": "Items",        "color": "#A2C4C9", "types": ["MISC", "WEAP", "ARMO", "AMMO", "KEYM", "SLGM", "APPA"] },
+    { "name": "Plants",       "color": "#6AA84F", "types": ["FLOR", "TREE", "GRAS"] },
+    { "name": "Plants",       "path": ["landscape\\plants", "landscape\\trees", "plants\\"] },
+    { "name": "Decor",        "color": "#E6B8AF", "path": ["painting", "tapestr", "rug", "carpet", "\\cloth", "decoration", "statue", "frames", "instruments", "loadscreenart", "banner", "vase", "treasures"] },
+    { "name": "Decor",        "editorId": ["Painting", "Rug", "Tapestry", "Banner", "Statue", "Drapery", "Vase"] },
+    { "name": "Architecture", "color": "#6FA8DC", "path": ["architecture\\", "dungeons\\", "\\interior\\"] },
+    { "name": "Landscape",    "color": "#8E7CC3", "path": ["landscape\\"] },
+    { "name": "Effects",      "color": "#76A5AF", "path": ["effects\\", "fx"] },
+    { "name": "Clutter",      "color": "#B7B7B7", "path": ["clutter", "alchemy\\"] },
+    { "name": "Activators",   "color": "#E69138", "types": ["ACTI", "TACT"] }
+  ],
+  "overrides": {
+  }
+}

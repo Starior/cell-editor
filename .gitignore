@@ -1,0 +1,6 @@
+bin/
+obj/
+mo2.txt
+logs/
+mesh-cache/
+AGENTS.md

@@ -1,0 +1,11 @@
+<Window x:Class="CellEditor.Cells.CellSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Open Cell" Height="480" Width="640"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="CanResize">
+    <DockPanel Margin="12">
+        <TextBox x:Name="Query" DockPanel.Dock="Top" Margin="0,0,0,8"
+                 TextChanged="Query_Changed" KeyDown="Query_KeyDown" />
+        <ListBox x:Name="Hits" DisplayMemberPath="Label" MouseDoubleClick="Hits_Open" KeyDown="Hits_KeyDown" />
+    </DockPanel>
+</Window>

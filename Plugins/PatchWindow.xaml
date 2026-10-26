@@ -1,0 +1,32 @@
+<Window x:Class="CellEditor.Plugins.PatchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Create Patch" Width="520" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize"
+        Background="#FF252526" Foreground="#FFD4D4D4">
+    <StackPanel Margin="14">
+        <TextBlock x:Name="SummaryText" TextWrapping="Wrap" Margin="0,0,0,12" />
+
+        <RadioButton x:Name="NewRadio" Content="New plugin" Foreground="#FFD4D4D4" IsChecked="True" GroupName="Target"
+                     Checked="Target_Changed" />
+        <TextBox x:Name="NameBox" Margin="20,4,0,0" Padding="4,2" Text="CellEditor Patch"
+                 Background="#FF1E1E1E" Foreground="#FFD4D4D4" CaretBrush="#FFD4D4D4" BorderBrush="#FF3F3F3F"
+                 TextChanged="Name_Changed" />
+        <TextBlock x:Name="NewPathText" Margin="20,4,0,0" Foreground="#FF8A8A8A" TextWrapping="Wrap" FontSize="11" />
+
+        <RadioButton x:Name="ExistingRadio" Content="Existing plugin" Foreground="#FFD4D4D4" GroupName="Target"
+                     Margin="0,12,0,0" Checked="Target_Changed" />
+        <DockPanel Margin="20,4,0,0">
+            <Button DockPanel.Dock="Right" Content="Browse..." Width="80" Margin="6,0,0,0" Click="Browse_Click" />
+            <ComboBox x:Name="ExistingBox" DisplayMemberPath="FileName" SelectionChanged="Existing_Changed" />
+        </DockPanel>
+        <TextBlock x:Name="ExistingPathText" Margin="20,4,0,0" Foreground="#FF8A8A8A" TextWrapping="Wrap" FontSize="11"
+                   Text="Overrides already in the plugin stay. References changed here are written or overwritten." />
+
+        <TextBlock x:Name="ErrorText" Foreground="#FFE07070" TextWrapping="Wrap" Margin="0,10,0,0" Visibility="Collapsed" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+            <Button Content="Save" Width="88" Margin="0,0,8,0" IsDefault="True" Click="Save_Click" />
+            <Button Content="Cancel" Width="88" IsCancel="True" />
+        </StackPanel>
+    </StackPanel>
+</Window>
